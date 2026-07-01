@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>필즈더클래식 22번 - 초등 3학년 시계 각도 문제 풀이</title>
+<style>
+  :root { --green:#2f8f4e; --ink:#222; --soft:#f4f8f4; }
+  * { box-sizing: border-box; }
+  body { font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; color: var(--ink); line-height: 1.75; margin: 0; background: #fbfdfb; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 24px 18px 80px; }
+  h1 { color: var(--green); font-size: 1.5rem; border-bottom: 3px solid var(--green); padding-bottom: 8px; }
+  h2 { color: var(--green); margin-top: 40px; font-size: 1.25rem; }
+  h3 { margin-top: 24px; font-size: 1.08rem; }
+  .box { background: var(--soft); border: 1px solid #d9e7dc; border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+  .answer { background: #fff8e6; border: 2px solid #f0c33c; border-radius: 12px; padding: 16px 20px; margin: 20px 0; font-size: 1.1rem; }
+  .answer b { color: #d98800; font-size: 1.25rem; }
+  ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+  .hi { background: #fff2b3; padding: 0 4px; border-radius: 4px; font-weight: 700; }
+  .center { text-align: center; }
+  svg { max-width: 100%; height: auto; }
+  .caption { color: #666; font-size: 0.9rem; }
+  code { background:#eef3ee; padding:1px 6px; border-radius:5px; }
+  footer { margin-top: 60px; color:#888; font-size:0.85rem; text-align:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p><a href="index.html" style="color:#2f8f4e;text-decoration:none;">← 문제 목록</a></p>
+  <h1>🕐 필즈더클래식 22번 · 시계 각도 문제</h1>
+  <p class="caption">초등학교 3학년 눈높이로 쉽게 풀어보기</p>
+
+  <h2>📖 문제</h2>
+  <div class="box">
+    숫자가 쓰여 있지 않은 시계가 바닥에 <b>비뚤게</b> 놓여 있어요.<br />
+    이 시계가 가리키는 <b>시각(몇 시 몇 분)</b>을 구하세요.
+    <ul>
+      <li><b>(1)</b> 두 바늘(시침·분침)이 이루는 각이 <b>47.5°</b></li>
+      <li><b>(2)</b> 시침과 점선(숫자 방향)이 이루는 각이 <b>11°</b></li>
+    </ul>
+  </div>
+
+  <h2>🧠 먼저 알아두기 (시계의 비밀)</h2>
+  <div class="box">
+    <ul>
+      <li><b>분침(긴 바늘)</b>은 1분에 <b>6°</b>씩 돌아요. (한 바퀴 360° ÷ 60분)</li>
+      <li><b>시침(짧은 바늘)</b>은 느림보! 1분에 <b>0.5°</b>씩만 돌아요. (한 칸 30° ÷ 60분)</li>
+      <li>그래서 1분마다 두 바늘 사이는 <b>6° − 0.5° = 5.5°</b>씩 벌어지거나 좁아져요.</li>
+      <li>숫자와 숫자 사이 한 칸 = <b>30°</b> = <b>5분</b></li>
+    </ul>
+  </div>
+
+  <!-- ================= (1) ================= -->
+  <h2>✏️ (1) 두 바늘이 47.5° 벌어졌을 때</h2>
+
+  <div class="center">
+    <svg class="clock" data-hour="102.5" data-min="150" data-arc="47.5" viewBox="0 0 300 300" width="300"></svg>
+    <div class="caption">실제 시각은 <b>3시 25분</b> 이에요.</div>
+  </div>
+
+  <div class="box">
+    <h3>① 몇 시쯤인지 기준 잡기</h3>
+    <ul>
+      <li><b>3시 정각</b>이면 짧은바늘은 숫자 3, 긴바늘은 꼭대기(12)를 가리켜 딱 <b>90°</b> 벌어져요.</li>
+      <li>시간이 지나면 빠른 긴바늘이 짧은바늘을 <b>따라잡고 지나가요</b>.</li>
+    </ul>
+    <h3>② 몇 분인지 계산하기</h3>
+    <ul>
+      <li>90°에서 시작해서 긴바늘이 짧은바늘을 지나 다시 <b>47.5°</b>가 되려면,
+        두 바늘 사이가 <b>90° + 47.5° = 137.5°</b>만큼 변해야 해요.</li>
+      <li>1분에 5.5°씩 변하니까 → <b>137.5 ÷ 5.5 = 25분</b>!</li>
+    </ul>
+    ➡️ 그래서 <b>3시 25분</b>
+  </div>
+
+  <div class="box">
+    <b>✅ 검산</b>
+    <ul>
+      <li>긴바늘(분침): 25분 → 25 × 6° = <b>150°</b></li>
+      <li>짧은바늘(시침): 3시(90°) + 25분(12.5°) = <b>102.5°</b></li>
+      <li>두 바늘 사이 = 150° − 102.5° = <b>47.5°</b> ✓ 딱 맞아요!</li>
+    </ul>
+  </div>
+  <div class="answer">(1) 시각 = <b>3시 25분</b></div>
+
+  <!-- ================= (2) ================= -->
+  <h2>✏️ (2) 시침이 숫자에서 11° 떨어졌을 때</h2>
+
+  <div class="center">
+    <svg class="clock" data-hour="109" data-min="228" data-mark="120" data-markarc="11" viewBox="0 0 300 300" width="300"></svg>
+    <div class="caption">실제 시각은 <b>3시 38분</b> 이에요.</div>
+  </div>
+
+  <div class="box">
+    <h3>① 몇 분인지 찾기</h3>
+    <ul>
+      <li>짧은바늘(시침)은 한 숫자에서 다음 숫자(30°)까지 가는 데 <b>60분</b> 걸려요. (1분에 0.5°)</li>
+      <li>그림에서 짧은바늘은 <b>바로 앞 숫자(점선)까지 11°</b>가 남았어요.</li>
+      <li>그러니 바로 <b>전 숫자</b>는 <b>30° − 11° = 19°</b> 전에 지났어요.</li>
+      <li>전 숫자를 지난 지 → <b>19 ÷ 0.5 = 38분</b>!</li>
+    </ul>
+    <h3>② 몇 시인지 찾기</h3>
+    <ul>
+      <li>짧은바늘은 어떤 숫자를 지나 다음 숫자로 가는 중이에요.</li>
+      <li>긴바늘·짧은바늘의 위치를 함께 보면 짧은바늘은 <b>3과 4 사이</b>에 있어요.</li>
+      <li>지난 숫자가 <b>3</b> → 지금은 <b>3시</b></li>
+    </ul>
+    ➡️ 그래서 <b>3시 38분</b>
+  </div>
+
+  <div class="box">
+    <b>✅ 검산</b>
+    <ul>
+      <li>짧은바늘(시침): 3시(90°) + 38분(19°) = <b>109°</b></li>
+      <li>다음 숫자 <b>4</b>는 120° 자리 → 120° − 109° = <b>11°</b> ✓ 딱 맞아요!</li>
+      <li>긴바늘(분침): 38분 → 228° 자리를 가리켜요.</li>
+    </ul>
+  </div>
+  <div class="answer">(2) 시각 = <b>3시 38분</b></div>
+
+  <h2>🎯 최종 정답</h2>
+  <div class="answer">
+    (1) <b>3시 25분</b> &nbsp;&nbsp;/&nbsp;&nbsp; (2) <b>3시 38분</b>
+  </div>
+
+  <footer>필즈더클래식 22번 풀이 · 초3 눈높이 설명</footer>
+</div>
+
+<script>
+// data-hour / data-min : 12시=0, 시계방향 각도(도)
+// data-arc : 두 바늘 사이 각 라벨
+// data-mark / data-markarc : 숫자(점선) 방향과 그 각 라벨
+(function () {
+  const NS = "http://www.w3.org/2000/svg";
+  const cx = 150, cy = 150, R = 130;
+  function el(n, a) { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); return e; }
+  function pt(deg, r) { const a = (deg - 90) * Math.PI / 180; return [cx + r * Math.cos(a), cy + r * Math.sin(a)]; }
+
+  document.querySelectorAll("svg.clock").forEach(function (svg) {
+    const hAng = parseFloat(svg.dataset.hour);
+    const mAng = parseFloat(svg.dataset.min);
+
+    svg.appendChild(el("circle", { cx, cy, r: R, fill: "#fff", stroke: "#9aa19a", "stroke-width": 6 }));
+    for (let i = 0; i < 60; i++) {
+      const big = i % 5 === 0;
+      const [x1, y1] = pt(i * 6, R - (big ? 14 : 7));
+      const [x2, y2] = pt(i * 6, R - 2);
+      svg.appendChild(el("line", { x1, y1, x2, y2, stroke: big ? "#666" : "#c3c9c3", "stroke-width": big ? 3 : 1.5 }));
+    }
+    // 숫자 방향 점선
+    if (svg.dataset.mark !== undefined) {
+      const [dx, dy] = pt(parseFloat(svg.dataset.mark), R - 6);
+      svg.appendChild(el("line", { x1: cx, y1: cy, x2: dx, y2: dy, stroke: "#b0b0b0", "stroke-width": 2, "stroke-dasharray": "5 5" }));
+    }
+    // 분침
+    const [mx, my] = pt(mAng, R - 18);
+    svg.appendChild(el("line", { x1: cx, y1: cy, x2: mx, y2: my, stroke: "#2f8f4e", "stroke-width": 5, "stroke-linecap": "round" }));
+    // 시침
+    const [hx, hy] = pt(hAng, R - 55);
+    svg.appendChild(el("line", { x1: cx, y1: cy, x2: hx, y2: hy, stroke: "#7a4b2b", "stroke-width": 8, "stroke-linecap": "round" }));
+    svg.appendChild(el("circle", { cx, cy, r: 6, fill: "#555" }));
+
+    // 각 라벨: 두 바늘 사이
+    if (svg.dataset.arc !== undefined) {
+      const mid = (hAng + mAng) / 2;
+      const [lx, ly] = pt(mid, 52);
+      const t = el("text", { x: lx, y: ly + 5, "font-size": 15, "font-weight": "bold", fill: "#d98800", "text-anchor": "middle" });
+      t.textContent = svg.dataset.arc + "°";
+      svg.appendChild(t);
+    }
+    // 각 라벨: 시침 ~ 숫자점선
+    if (svg.dataset.markarc !== undefined) {
+      const mid = (hAng + parseFloat(svg.dataset.mark)) / 2;
+      const [lx, ly] = pt(mid, 70);
+      const t = el("text", { x: lx, y: ly + 5, "font-size": 15, "font-weight": "bold", fill: "#d98800", "text-anchor": "middle" });
+      t.textContent = svg.dataset.markarc + "°";
+      svg.appendChild(t);
+    }
+  });
+})();
+</script>
+</body>
+</html>

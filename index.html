@@ -3,164 +3,46 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>필즈더클래식 21번 - 초등 3학년 시계 각도 문제 풀이</title>
+<title>필즈더클래식 시계 각도 문제 풀이 (초3)</title>
 <style>
-  :root { --green:#2f8f4e; --ink:#222; --soft:#f4f8f4; }
+  :root { --green:#2f8f4e; }
   * { box-sizing: border-box; }
-  body {
-    font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-    color: var(--ink); line-height: 1.75; margin: 0;
-    background: #fbfdfb;
+  body { font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; color:#222; line-height:1.7; margin:0; background:#fbfdfb; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 32px 18px 80px; }
+  h1 { color: var(--green); font-size: 1.5rem; border-bottom: 3px solid var(--green); padding-bottom: 10px; }
+  .caption { color:#666; }
+  .card {
+    display:block; text-decoration:none; color:inherit;
+    background:#fff; border:1px solid #d9e7dc; border-radius:14px;
+    padding:20px 22px; margin:18px 0; transition:.15s;
   }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 24px 18px 80px; }
-  h1 { color: var(--green); font-size: 1.5rem; border-bottom: 3px solid var(--green); padding-bottom: 8px; }
-  h2 { color: var(--green); margin-top: 40px; font-size: 1.25rem; }
-  h3 { margin-top: 24px; font-size: 1.08rem; }
-  .box {
-    background: var(--soft); border: 1px solid #d9e7dc; border-radius: 12px;
-    padding: 16px 20px; margin: 16px 0;
-  }
-  .answer {
-    background: #fff8e6; border: 2px solid #f0c33c; border-radius: 12px;
-    padding: 16px 20px; margin: 20px 0; font-size: 1.1rem;
-  }
-  .answer b { color: #d98800; font-size: 1.25rem; }
-  ul { padding-left: 22px; }
-  li { margin: 6px 0; }
-  .hi { background: #fff2b3; padding: 0 4px; border-radius: 4px; font-weight: 700; }
-  .center { text-align: center; }
-  svg { max-width: 100%; height: auto; }
-  .caption { color: #666; font-size: 0.9rem; }
-  code { background:#eef3ee; padding:1px 6px; border-radius:5px; }
-  footer { margin-top: 60px; color:#888; font-size:0.85rem; text-align:center; }
+  .card:hover { border-color: var(--green); box-shadow:0 4px 14px rgba(47,143,78,.12); transform:translateY(-2px); }
+  .card h2 { margin:0 0 6px; color: var(--green); font-size:1.2rem; }
+  .card .ans { color:#d98800; font-weight:700; }
+  .arrow { float:right; color:#bbb; font-size:1.4rem; }
+  footer { margin-top:50px; color:#999; font-size:.85rem; text-align:center; }
 </style>
 </head>
 <body>
 <div class="wrap">
+  <h1>🕐 필즈더클래식 시계 각도 문제 풀이</h1>
+  <p class="caption">숫자가 없는 시계 문제를 초등학교 3학년 눈높이로 쉽게 설명했어요.</p>
 
-  <h1>🕐 필즈더클래식 21번 · 시계 각도 문제</h1>
-  <p class="caption">초등학교 3학년 눈높이로 쉽게 풀어보기</p>
+  <a class="card" href="21.html">
+    <span class="arrow">›</span>
+    <h2>21번 문제</h2>
+    <div>두 바늘이 이루는 각이 70°일 때, 표시된 각과 시각 구하기</div>
+    <div class="ans">정답: 표시된 각 20° · 5시 40분</div>
+  </a>
 
-  <h2>📖 문제</h2>
-  <div class="box">
-    숫자가 쓰여 있지 않은 시계가 바닥에 <b>비뚤게</b> 놓여 있어요.<br />
-    시침(짧은 바늘)과 분침(긴 바늘)이 이루는 각이 <b>70°</b>일 때,<br />
-    ① <b>표시된 각</b>과 &nbsp; ② 시계가 가리키는 <b>시각(몇 시 몇 분)</b>을 각각 구하세요.
-  </div>
+  <a class="card" href="22.html">
+    <span class="arrow">›</span>
+    <h2>22번 문제</h2>
+    <div>(1) 두 바늘 47.5°, (2) 시침과 숫자 11°일 때 시각 구하기</div>
+    <div class="ans">정답: (1) 3시 25분 · (2) 3시 38분</div>
+  </a>
 
-  <div class="center">
-    <svg id="clock" viewBox="0 0 300 300" width="320" role="img"
-         aria-label="5시 40분을 가리키는 시계"></svg>
-    <div class="caption">실제 시각은 <b>5시 40분</b> 이에요. (문제 그림은 이 시계를 옆으로 살짝 돌려 놓은 모습)</div>
-  </div>
-
-  <h2>🧠 먼저 알아두기 (시계의 비밀)</h2>
-  <div class="box">
-    <ul>
-      <li><b>분침(긴 바늘)</b>은 60분 동안 시계를 한 바퀴(360°) 돌아요 → <b>1분에 6°</b>.</li>
-      <li>숫자와 숫자 사이 한 칸은 <b>30°</b> 이고, 시간으로는 <b>5분</b>이에요.</li>
-      <li><b>시침(짧은 바늘)</b>은 아주 느림보! 60분(1시간) 동안 겨우 한 칸(30°)만 움직여요.
-        <br />→ 30분이면 15°, <b>40분이면 20°</b> 움직여요.</li>
-    </ul>
-  </div>
-
-  <h2>① 표시된 각 구하기</h2>
-  <div class="box">
-    <ul>
-      <li>그림에서 <b>분침</b>은 옆으로 반듯이 누워 있어요 (가로 —).</li>
-      <li><b>점선</b>은 아래로 반듯이 내려가요 (세로 |).</li>
-      <li>가로와 세로가 만나면 <span class="hi">직각 = 90°</span> 예요.</li>
-      <li>두 바늘이 이루는 각은 <b>70°</b> 라고 했어요.</li>
-      <li>그러니까 시침과 점선 사이(표시된 각) = <b>90° − 70° = 20°</b></li>
-    </ul>
-  </div>
-  <div class="answer">① 표시된 각 = <b>20°</b></div>
-
-  <h2>② 몇 시 몇 분일까?</h2>
-
-  <h3>먼저 '몇 분'인지 찾기</h3>
-  <div class="box">
-    <ul>
-      <li>시침이 숫자 한 칸(30°)을 지나는 데 <b>60분</b>이 걸려요.</li>
-      <li>그런데 시침은 지금 점선(숫자 자리)에서 <b>20°</b>만큼 움직여 있어요.</li>
-      <li>30°가 60분이니까, 20°는 → 60분 × (20 ÷ 30) = <b>40분</b>!</li>
-    </ul>
-    ➡️ 지금은 <b>△△시 40분</b> 이에요. (분침도 40분 자리인 '8' 자리를 가리켜요.)
-  </div>
-
-  <h3>이제 '몇 시'인지 찾기</h3>
-  <div class="box">
-    <ul>
-      <li>분침은 40분 자리(숫자 <b>8</b> 자리)에 있어요.</li>
-      <li>시침은 분침에서 <b>70°</b>만큼 떨어져 있어요.</li>
-      <li>한 칸이 30°니까 70° = 30° + 30° + 10° = <b>두 칸하고 조금 더</b>.</li>
-      <li>분침(8 자리)에서 시침 쪽으로 두 칸 반쯤 돌아가면 시침은 <b>5와 6 사이</b>에 있어요.
-        (5를 20° 지난 자리)</li>
-    </ul>
-    ➡️ 그래서 지금은 <b>5시</b> 예요.
-  </div>
-  <div class="answer">② 시각 = <b>5시 40분</b></div>
-
-  <h2>✅ 검산 (정말 맞을까?)</h2>
-  <div class="box">
-    5시 40분일 때 두 바늘의 위치를 계산해 봐요.
-    <ul>
-      <li>분침: 40분 → 40 × 6° = <b>240°</b> (숫자 8 자리)</li>
-      <li>시침: 5시(150°) + 40분 동안 움직인 20° = <b>170°</b> (5와 6 사이)</li>
-      <li>두 바늘 사이 각: 240° − 170° = <b>70°</b> ✓ 딱 맞아요!</li>
-    </ul>
-  </div>
-
-  <h2>🎯 최종 정답</h2>
-  <div class="answer">
-    ① 표시된 각 = <b>20°</b> &nbsp;&nbsp;/&nbsp;&nbsp; ② 시각 = <b>5시 40분</b>
-  </div>
-
-  <footer>필즈더클래식 21번 풀이 · 초3 눈높이 설명</footer>
+  <footer>초3 눈높이 수학 풀이 모음</footer>
 </div>
-
-<script>
-// 5시 40분 시계 그리기
-(function () {
-  const NS = "http://www.w3.org/2000/svg";
-  const svg = document.getElementById("clock");
-  const cx = 150, cy = 150, R = 130;
-
-  function el(name, attrs) {
-    const e = document.createElementNS(NS, name);
-    for (const k in attrs) e.setAttribute(k, attrs[k]);
-    return e;
-  }
-  // 각도(12시=0, 시계방향)를 좌표로
-  function pt(angleDeg, r) {
-    const a = (angleDeg - 90) * Math.PI / 180; // 12시가 위
-    return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
-  }
-
-  // 시계 테두리
-  svg.appendChild(el("circle", { cx, cy, r: R, fill: "#ffffff", stroke: "#9aa19a", "stroke-width": 6 }));
-  svg.appendChild(el("circle", { cx, cy, r: 6, fill: "#555" }));
-
-  // 60개 눈금
-  for (let i = 0; i < 60; i++) {
-    const big = i % 5 === 0;
-    const [x1, y1] = pt(i * 6, R - (big ? 14 : 7));
-    const [x2, y2] = pt(i * 6, R - 2);
-    svg.appendChild(el("line", { x1, y1, x2, y2, stroke: big ? "#666" : "#c3c9c3", "stroke-width": big ? 3 : 1.5 }));
-  }
-
-  // 분침(40분 = 240°), 시침(5시40분 = 170°)
-  const [mx, my] = pt(240, R - 20);
-  svg.appendChild(el("line", { x1: cx, y1: cy, x2: mx, y2: my, stroke: "#2f8f4e", "stroke-width": 5, "stroke-linecap": "round" }));
-  const [hx, hy] = pt(170, R - 55);
-  svg.appendChild(el("line", { x1: cx, y1: cy, x2: hx, y2: hy, stroke: "#7a4b2b", "stroke-width": 8, "stroke-linecap": "round" }));
-
-  // 70° 표시
-  const [lx, ly] = pt(205, 45);
-  const t = el("text", { x: lx, y: ly, "font-size": 16, "font-weight": "bold", fill: "#d98800", "text-anchor": "middle" });
-  t.textContent = "70°";
-  svg.appendChild(t);
-})();
-</script>
 </body>
 </html>
